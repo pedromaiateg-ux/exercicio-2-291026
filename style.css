@@ -1,0 +1,277 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eeeeee;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 15px 20px;
+}
+
+.logo {
+    width: 150px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.simbolo {
+    color: #233d70;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: -4px;
+    border-top: 6px solid #233d70;
+    padding-top: 3px;
+}
+
+.cabecalho h1 {
+    color: #233d70;
+    font-size: clamp(24px, 4vw, 46px);
+    font-weight: bold;
+    text-align: right;
+}
+
+/* BANNER */
+.banner {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #34465f;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 25px;
+    padding: 20px 10px;
+}
+
+/* MENU LATERAL */
+.menu-lateral ul {
+    list-style: none;
+}
+
+.menu-lateral li {
+    margin-bottom: 8px;
+}
+
+.menu-lateral a {
+    color: #444444;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu-lateral a:hover {
+    color: #233d70;
+    font-weight: bold;
+}
+
+/* DOAÇÃO */
+.doacao {
+    margin-top: 55px;
+    text-align: center;
+}
+
+.doacao a {
+    display: block;
+    background-color: #174a91;
+    color: white;
+    padding: 12px 5px;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.doacao p {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* GRADE DE NOTÍCIAS */
+.noticias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px 20px;
+}
+
+.card {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h2 {
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    margin: 8px 0;
+}
+
+.card p {
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* RODAPÉ */
+.rodape {
+    border-top: 1px solid #cccccc;
+    margin-top: 10px;
+    padding: 25px 10px 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.rodape-coluna h3 {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.rodape-coluna p,
+.rodape-coluna a {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.rodape-coluna a {
+    color: #333333;
+}
+
+.redes-sociais {
+    grid-column: 1 / -1;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.redes-sociais a {
+    display: inline-block;
+    color: #333333;
+    margin: 5px;
+    font-size: 11px;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    padding-top: 10px;
+    border-top: 1px solid #eeeeee;
+}
+
+/* RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 700px) {
+    .container {
+        margin: 0;
+        padding: 12px;
+    }
+
+    .cabecalho {
+        gap: 10px;
+    }
+
+    .logo {
+        width: auto;
+    }
+
+    .simbolo {
+        font-size: 25px;
+    }
+
+    .cabecalho h1 {
+        font-size: 23px;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-lateral ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .menu-lateral li {
+        margin: 0;
+    }
+
+    .doacao {
+        max-width: 220px;
+        margin: 20px auto;
+    }
+
+    .noticias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .card img {
+        height: 100px;
+    }
+
+    .rodape {
+        grid-template-columns: 1fr;
+    }
+
+    .redes-sociais,
+    .copyright {
+        grid-column: auto;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 400px) {
+    .cabecalho h1 {
+        font-size: 19px;
+    }
+
+    .noticias {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: 160px;
+    }
+}
